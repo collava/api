@@ -5,7 +5,9 @@ defmodule CollavaApiWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/api", CollavaApiWeb do
+  scope "/api/v1", CollavaApiWeb do
     pipe_through :api
+
+    resources "/users", UserController
   end
 end
